@@ -11,9 +11,9 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-print("The sum for this Sample Data page is 2553")
+print("This sum should end in 37")
 
-url = "http://py4e-data.dr-chuck.net/comments_42.html"
+url = "http://py4e-data.dr-chuck.net/comments_1123608.htmli"
 
 with urllib.request.urlopen(url, context=ctx) as response:
    html = response.read()
