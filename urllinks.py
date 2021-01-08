@@ -14,23 +14,18 @@ def GetSoup(url,ctx):
     soup = BeautifulSoup(html, 'html.parser')
     return soup
 
-InitialUrl = "http://py4e-data.dr-chuck.net/known_by_Fikret.html"
+InitialUrl = "http://py4e-data.dr-chuck.net/known_by_Cherry.html"
 
 # ForLoopUrl
 flu=""
 
-for i in range(4):
+for i in range(7):
 
     if not flu:
         tags = GetSoup(InitialUrl,SslContex).find_all('a')
     else:
         tags = GetSoup(flu,SslContex).find_all('a')
 
-    flu = tags[2].get('href', None)
+    flu = tags[17].get('href', None)
 
 print( flu.split("_")[-1].split(".")[0] )
-
-# Retrieve all of the anchor tags
-# tags = soup.find_all('a')
-# for tag in tags:
-#    print(tag.get('href', None))
